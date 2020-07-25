@@ -11,8 +11,8 @@ We'll be able to see movies that exist in our DB. We'll also be able to see deta
 
 ## Database Setup
 
-1. Create a database named `saga_movies_weekend`
-2. Run the queries from `database.sql` on the `saga_movies_weekend` database.
+[x] Create a database named `saga_movies_weekend`
+[x] Run the queries from `database.sql` on the `saga_movies_weekend` database.
 3. You will need to create the junction table between the `movies` and `genres` tables!
 
 ## Install Dependencies
