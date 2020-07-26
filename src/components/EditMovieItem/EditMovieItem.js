@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+import SaveButton from "../buttons/SaveButton/SaveButton";
+import CancelButton from "../buttons/CancelButton/CancelButton";
+
 class EditMovieItem extends Component {
   render() {
     return (
@@ -10,8 +13,8 @@ class EditMovieItem extends Component {
         <textarea></textarea>
         <br/>
         <br/>
-        <button>Save</button>
-        <button>Cancel</button>
+        <SaveButton/>
+        <CancelButton/>
       </div>
     );
   }
