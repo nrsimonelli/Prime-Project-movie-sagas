@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 class AllMoviesButton extends Component {
 
   handleClick = (event) => {
-    this.props.history.push("/");
+    this.props.history.push("all-movies");
   };
 
   render() {

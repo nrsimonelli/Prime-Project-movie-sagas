@@ -1,13 +1,22 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 class MovieItem extends Component {
   render() {
     return (
       <div className="movie-item">
-        <p>Here is an item from the MovieItem Component</p>
+        <img
+          className="searchImage"
+          src={this.props.thisItem.poster}
+          alt={this.props.thisItem.title}
+        ></img>
       </div>
     );
   }
 }
 
-export default MovieItem;
+const mapReduxStateToProps = (reduxState) => ({
+  reduxState,
+});
+
+export default connect(mapReduxStateToProps)(MovieItem);
