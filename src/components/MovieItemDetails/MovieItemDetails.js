@@ -1,19 +1,37 @@
 import React, { Component } from "react";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 
 import EditButton from '../buttons/EditButton/EditButton';
 import AllMoviesButton from '../buttons/AllMoviesButton/AllMoviesButton';
 
+
 class MovieItemDetails extends Component {
+
+  state = {
+    id: this.props.match.params.id
+  }
+
+
+  componentDidMount = () => {
+    this.getMovies();
+  }
+
+  getMovies = () => {
+    let index = this.state.id;
+    console.log('index:', index);
+    this.props.dispatch({ type: "FETCH_MOVIE_DETAIL" });
+    this.setState({
+      ...this.state, 
+      movieTitle: this.props.movies[1].title
+    })
+    
+  };
   
   render() {
     return (
-      <div className="movie-item-details">
-        {console.log(this.props.match)}
-        {/* <h3>{this.props.match}</h3> */}
-        <p>
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed d
-        </p>
+      <div>
+        <p>{this.state.movieTitle}</p>
+        {/* <p>{this.props.match.params.title}</p> */}
         <EditButton />
         <AllMoviesButton />
       </div>
@@ -29,5 +47,10 @@ class MovieItemDetails extends Component {
     //   <p>This is the details page for item with id {props.match.params.id}!</p>
     // </div>;
 
+const mapReduxStateToProps = (reduxState) => ({
+  reduxState,
+});
 
-export default MovieItemDetails;
+export default connect(mapReduxStateToProps)(MovieItemDetails);
+
+
