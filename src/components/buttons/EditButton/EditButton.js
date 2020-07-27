@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 class EditButton extends Component {
 
   handleClick = (event) => {
-    this.props.history.push("/edit-movie");
+    this.props.history.push(`/edit-movie/${this.props.id}`);
   };
 
   render() {

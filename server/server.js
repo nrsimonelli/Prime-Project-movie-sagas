@@ -10,8 +10,10 @@ app.use(express.static('build'));
 
 /** ---------- ROUTES ---------- **/
 const moviesRouter = require('./routes/movies.router');
+const detailsRouter = require('./routes/details.router');
 
 app.use("/api/movies/", moviesRouter);
+app.use("/api/details/", detailsRouter);
 
 /** ---------- START SERVER ---------- **/
 app.listen(port, function () {

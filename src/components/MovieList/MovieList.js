@@ -16,10 +16,10 @@ class MovieList extends Component {
         return (
           <div className="movie-list">
             {/* {JSON.stringify(this.props.reduxState.movies)} */}
-            {this.props.reduxState.movies.map((x, key) => {
+            {this.props.reduxState.movies.map(item => {
               return (
                 <div>
-                  <MovieItem thisItem={x}/>
+                  <MovieItem movie={item}/>
                 </div>
               );
             })}
