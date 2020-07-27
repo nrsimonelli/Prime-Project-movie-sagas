@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 
 class CancelButton extends Component {
+
   handleClick = (event) => {
-    // this.props.history.push("all-movies");
-    console.log("Going back to selected movie details");
+    this.props.history.push(`/details/${this.props.id}`);
   };
 
   render() {

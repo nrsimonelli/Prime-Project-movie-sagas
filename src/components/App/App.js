@@ -6,7 +6,7 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 
 import Header from '../Header/Header';
 import MovieList from '../MovieList/MovieList';
-import MovieItemDetails from "../MovieItemDetails/MovieItemDetails";
+import MovieDetails from "../MovieDetails/MovieDetails";
 import EditMovieItem from "../EditMovieItem/EditMovieItem";
 
 class App extends Component {
@@ -15,11 +15,10 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <p>Empty Page</p>
         <Router>
           <Route exact path="/" component={MovieList} />
-          <Route path='/details/:id' component={MovieItemDetails} />
-          <Route path="/edit-movie" component={EditMovieItem} />
+          <Route path='/details/:id' component={MovieDetails} />
+          <Route path="/edit-movie/:id" component={EditMovieItem} />
         </Router>
       </div>
     );

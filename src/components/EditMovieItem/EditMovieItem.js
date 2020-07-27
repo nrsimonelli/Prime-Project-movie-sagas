@@ -4,6 +4,11 @@ import SaveButton from "../buttons/SaveButton/SaveButton";
 import CancelButton from "../buttons/CancelButton/CancelButton";
 
 class EditMovieItem extends Component {
+
+  state = {
+    id: this.props.match.params.id
+  }
+
   render() {
     return (
       <div className="movie-item-details">
@@ -13,8 +18,8 @@ class EditMovieItem extends Component {
         <textarea></textarea>
         <br/>
         <br/>
-        <SaveButton/>
-        <CancelButton/>
+        <SaveButton id={this.state.id} />
+        <CancelButton id={this.state.id} />
       </div>
     );
   }

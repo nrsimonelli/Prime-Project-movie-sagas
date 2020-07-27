@@ -23,7 +23,7 @@ class MovieItem extends Component {
           alt={this.props.movie.title}
           onClick={this.handleClick}
         ></img>
-        {JSON.stringify(this.props.movie)}
+        {/* {JSON.stringify(this.props.movie)} */}
       </div>
     );
   }

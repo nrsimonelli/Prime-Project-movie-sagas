@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 
 class SaveButton extends Component {
+
   handleClick = (event) => {
-    // this.props.history.push("all-movies");
-    console.log("Saving new details for selected movie");
+    this.props.history.push(`/details/${this.props.id}`);
   };
 
   render() {
