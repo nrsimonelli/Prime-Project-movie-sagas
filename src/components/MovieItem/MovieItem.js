@@ -16,7 +16,7 @@ class MovieItem extends Component {
 
   render() {
     return (
-      <div className="movie-item">
+      <div>
         <img
           className="searchImage"
           src={this.props.movie.poster}
