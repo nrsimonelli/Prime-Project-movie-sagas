@@ -8,7 +8,7 @@ import AllMoviesButton from '../buttons/AllMoviesButton/AllMoviesButton';
 class MovieDetails extends Component {
 
   state = {
-    id: this.props.match.params.id,
+    id: this.props.match.params.id, //for routes
     movieId: Number((this.props.match.params.id) - 1),
     poster: '',
     title: '',
@@ -26,7 +26,7 @@ class MovieDetails extends Component {
     this.props.dispatch({ type: "FETCH_DETAILS" });
     this.setState({
       ...this.state,
-      // genres: this.props.reduxState.movies[this.state.movieId].genre_id,
+      // genres: this.props.reduxState.details[this.state.movieId].array_agg,
     })
   };
 

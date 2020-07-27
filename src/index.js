@@ -18,6 +18,7 @@ import axios from "axios";
 function* rootSaga() {
     yield takeEvery("FETCH_MOVIE", getMovieSaga);
     yield takeEvery("FETCH_DETAILS", getDetailsSaga);
+    yield takeEvery("CHANGE_MOVIE_DETAILS", changeMovieDetailsSaga);
 }
 
 function* getMovieSaga() {
@@ -37,6 +38,14 @@ function* getDetailsSaga() {
         yield put({ type: "SET_DETAILS", payload: response.data });
     } catch (error) {
         console.log("Error with Get:", error);
+    }
+}
+
+function* changeMovieDetailsSaga(action) {
+    try {
+        yield axios.put("/api/details/", action.payload);
+    } catch (err) {
+        console.log("error", err);
     }
 }
 

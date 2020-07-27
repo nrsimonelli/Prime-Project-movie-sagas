@@ -21,4 +21,20 @@ router.get('/', (req, res) => {
         });
 });
 
+router.put("/", (req, res) => {
+        console.log("req.body is", req.body);
+        const queryText = `UPDATE "movies" SET "title"=$1, "description"=$2 WHERE "id"=$3;`;
+        const queryValues = [req.body.title, req.body.description, req.body.id];
+        pool
+            .query(queryText, queryValues)
+            .then((result) => {
+                console.log("in /api/details GET");
+                res.send(result.rows);
+            })
+            .catch((error) => {
+                console.log(`PUT error:`, error);
+                res.sendStatus(500);
+            });
+});
+
 module.exports = router;
